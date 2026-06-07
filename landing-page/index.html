@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Stack — One app that launches OpenCode and OpenChamber together. Run as a Windows desktop app or deploy as a web app on any VPS.">
+  <title>AI Stack — OpenCode + OpenChamber in One App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+<body>
+
+  <div class="blur-orb orb-1"></div>
+  <div class="blur-orb orb-2"></div>
+  <div class="blur-orb orb-3"></div>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <img src="assets/icon.png" alt="AI Stack Logo" class="brand-logo">
+        <span class="brand-name">AI Stack</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#install-pc">PC Install</a>
+        <a href="#install-vps">VPS Deploy</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#download" class="btn btn-primary nav-cta" id="nav-download-btn">
+        <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+        Download .EXE
+      </a>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge-row">
+          <span class="badge">Open Source</span>
+          <span class="badge badge-cyan">Free Forever</span>
+        </div>
+        <h1 class="hero-title">
+          OpenCode &amp; OpenChamber.<br>
+          <span class="highlight">One App. Zero Setup.</span>
+        </h1>
+        <p class="hero-lead">
+          Stop opening two separate terminals. AI Stack is a single unified launcher that boots <strong>OpenCode</strong> (your AI coding backend) and <strong>OpenChamber</strong> (the web UI) together — as a native Windows desktop app or a self-hosted web app on your VPS.
+        </p>
+        <div class="hero-pills">
+          <span class="pill">✓ Windows .EXE Installer</span>
+          <span class="pill">✓ Docker VPS Deploy</span>
+          <span class="pill">✓ Use from Phone Browser</span>
+          <span class="pill">✓ Auto-updates</span>
+        </div>
+        <div class="hero-actions" id="download">
+          <a href="GOOGLE_DRIVE_LINK_HERE" class="btn btn-primary btn-lg" id="main-download-btn" target="_blank" rel="noopener">
+            <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Download for Windows (.EXE)
+          </a>
+          <a href="#install-vps" class="btn btn-glass btn-lg">
+            <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Deploy on VPS
+          </a>
+        </div>
+        <p class="hero-note">Windows 10/11 · 64-bit · Requires Node.js 18+ installed</p>
+      </div>
+      <div class="hero-visual">
+        <div class="mockup-frame" aria-hidden="true">
+          <div class="mockup-bar">
+            <div class="mockup-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <span class="mockup-title-text">AI Stack — OpenChamber</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mock-sidebar">
+              <div class="mock-nav-item active">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                Sessions
+              </div>
+              <div class="mock-nav-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Models
+              </div>
+              <div class="mock-nav-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg>
+                Settings
+              </div>
+            </div>
+            <div class="mock-chat">
+              <div class="mock-chat-header">New Session · GPT-4o</div>
+              <div class="mock-messages">
+                <div class="mock-msg user">Write me a REST API in Python with FastAPI</div>
+                <div class="mock-msg agent">
+                  <span class="agent-tag">OpenCode</span>
+                  <span class="typing-effect">Sure! Here's a complete FastAPI setup...</span>
+                </div>
+              </div>
+              <div class="mock-input">
+                <span class="mock-input-text">Type a message...</span>
+                <div class="mock-send">↵</div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-status-bar">
+            <span class="status-dot-green"></span> OpenCode :4095 &nbsp;·&nbsp;
+            <span class="status-dot-green"></span> OpenChamber :3000
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section id="how-it-works" class="section how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Architecture</span>
+        <h2 class="section-title">How it Works</h2>
+        <p class="section-subtitle">AI Stack is a thin, smart launcher. It starts both services, wires them together, and stays out of your way.</p>
+      </div>
+      <div class="arch-diagram">
+        <div class="arch-box user-box">
+          <div class="arch-icon">👤</div>
+          <div class="arch-label">You</div>
+          <div class="arch-sublabel">Open the app / browser</div>
+        </div>
+        <div class="arch-arrow">→</div>
+        <div class="arch-box app-box">
+          <div class="arch-icon">
+            <img src="assets/icon.png" alt="AI Stack" style="width:36px;height:36px;border-radius:8px;">
+          </div>
+          <div class="arch-label">AI Stack</div>
+          <div class="arch-sublabel">Unified Launcher</div>
+        </div>
+        <div class="arch-arrow-split">
+          <div class="arch-split-line">
+            <div class="arch-arrow-down">↓</div>
+            <div class="arch-box inner-box">
+              <div class="arch-label small">OpenCode</div>
+              <div class="arch-sublabel">AI backend · Port 4095</div>
+            </div>
+          </div>
+          <div class="arch-split-line">
+            <div class="arch-arrow-down">↓</div>
+            <div class="arch-box inner-box">
+              <div class="arch-label small">OpenChamber</div>
+              <div class="arch-sublabel">Web UI · Port 3000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-num">1</div>
+          <div>
+            <h3>You open AI Stack</h3>
+            <p>Double-click the desktop icon (PC) or run <code>docker compose up -d</code> on your VPS.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">2</div>
+          <div>
+            <h3>Both services boot automatically</h3>
+            <p>AI Stack starts <strong>OpenCode</strong> as a background AI server on port 4095, then starts <strong>OpenChamber</strong> which connects to it automatically on port 3000.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">3</div>
+          <div>
+            <h3>Start coding immediately</h3>
+            <p>The full OpenChamber interface opens in your desktop window (PC) or browser (VPS/phone). No config files. No terminal juggling. Just code.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-num">4</div>
+          <div>
+            <h3>Close the app when done</h3>
+            <p>Both OpenCode and OpenChamber are cleanly shut down automatically. No zombie processes left running in the background.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PC INSTALL GUIDE ── -->
+  <section id="install-pc" class="section install-pc">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Desktop App</span>
+        <h2 class="section-title">Install on your PC</h2>
+        <p class="section-subtitle">A native Windows installer with a custom icon and desktop shortcut. Download once, use forever.</p>
+      </div>
+
+      <div class="guide-layout">
+        <div class="guide-steps">
+          <!-- Step 1 -->
+          <div class="guide-step" id="step-pc-1">
+            <div class="guide-step-header">
+              <div class="guide-num">1</div>
+              <h3>Install Node.js (one-time prerequisite)</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>AI Stack requires Node.js to run OpenCode and OpenChamber. If you don't have it yet:</p>
+              <div class="callout callout-info">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Download and install from <a href="https://nodejs.org" target="_blank" rel="noopener" class="link">nodejs.org</a> — choose the <strong>LTS version</strong>. Restart your PC after installing.
+              </div>
+              <p>To verify it's installed, open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+              <div class="code-box">
+                <pre><code id="code-node-check">node --version</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-node-check', this)">Copy</button>
+              </div>
+              <p class="tip">✓ You should see something like <code>v20.x.x</code>. Anything v18 or higher works.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="guide-step" id="step-pc-2">
+            <div class="guide-step-header">
+              <div class="guide-num">2</div>
+              <h3>Install OpenCode &amp; OpenChamber globally</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>AI Stack launches OpenCode and OpenChamber from your system. Install both with one command — open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
+              <div class="code-box">
+                <pre><code id="code-global-install">npm install -g opencode-ai @openchamber/web</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-global-install', this)">Copy</button>
+              </div>
+              <p class="tip">✓ This only needs to be done once. To update them later, run the same command again.</p>
+              <div class="callout callout-info">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                If you skip this step, AI Stack will detect the missing tools when it opens and show you a popup with the install command — you can copy it directly from there.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="guide-step" id="step-pc-3-download">
+            <div class="guide-step-header">
+              <div class="guide-num">3</div>
+              <h3>Download the AI Stack Installer (.EXE)</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>Click the button below to download the Windows installer directly from Google Drive:</p>
+              <a href="GOOGLE_DRIVE_LINK_HERE" class="btn btn-primary" id="step-download-btn" target="_blank" rel="noopener">
+                <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                Download AI Stack Setup.exe
+              </a>
+              <div class="callout callout-warn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <strong>Windows SmartScreen notice:</strong> Because this installer is not yet code-signed, Windows may show a blue "Windows protected your PC" popup. Click <strong>"More info"</strong> → then <strong>"Run anyway"</strong>. The file is safe.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="guide-step" id="step-pc-3">
+            <div class="guide-step-header">
+              <div class="guide-num">3</div>
+              <h3>Run the Installer</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>Double-click the downloaded <code>AI Stack Setup.exe</code> file. The installer will:</p>
+              <ul class="check-list">
+                <li>Ask you to choose an installation folder (or use the default)</li>
+                <li>Create a <strong>desktop shortcut icon</strong> using the OpenChamber logo</li>
+                <li>Add AI Stack to your Start Menu</li>
+                <li>Complete in under 30 seconds</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="guide-step" id="step-pc-4">
+            <div class="guide-step-header">
+              <div class="guide-num">4</div>
+              <h3>Launch and Use</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>Double-click the <strong>AI Stack</strong> icon on your desktop. Within a few seconds:</p>
+              <ul class="check-list">
+                <li>A desktop window opens with the full OpenChamber interface</li>
+                <li>OpenCode starts silently in the background on port 4095</li>
+                <li>OpenChamber connects to it and loads in the window on port 3000</li>
+                <li>You're ready to create a session and start coding with AI</li>
+              </ul>
+              <div class="callout callout-info">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                First launch may take 10–20 seconds while OpenCode initialises its database. Subsequent launches are instant.
+              </div>
+              <p>To quit, simply close the window. Both services shut down cleanly automatically.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 — API Keys -->
+          <div class="guide-step" id="step-pc-5">
+            <div class="guide-step-header">
+              <div class="guide-num">5</div>
+              <h3>Add your AI Provider API Key</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>OpenCode supports multiple AI providers. You need to add at least one API key inside OpenChamber to start chatting:</p>
+              <ol class="num-list">
+                <li>Open AI Stack — the OpenChamber window loads</li>
+                <li>Click <strong>Settings</strong> (gear icon, bottom left)</li>
+                <li>Go to <strong>Providers</strong> tab</li>
+                <li>Choose your provider (OpenAI, Anthropic, Google, etc.) and paste your API key</li>
+                <li>Save — you're now ready to start a session</li>
+              </ol>
+              <div class="providers-grid">
+                <div class="provider-pill">OpenAI (GPT-4o)</div>
+                <div class="provider-pill">Anthropic (Claude)</div>
+                <div class="provider-pill">Google (Gemini)</div>
+                <div class="provider-pill">Groq</div>
+                <div class="provider-pill">Mistral</div>
+                <div class="provider-pill">Ollama (local)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar quick ref -->
+        <div class="guide-sidebar">
+          <div class="sidebar-card">
+            <h4>System Requirements</h4>
+            <ul class="req-list">
+              <li><span class="req-label">OS</span> Windows 10 / 11 (64-bit)</li>
+              <li><span class="req-label">Node.js</span> v18 or higher</li>
+              <li><span class="req-label">RAM</span> 4 GB minimum</li>
+              <li><span class="req-label">Disk</span> ~500 MB free</li>
+              <li><span class="req-label">Internet</span> Required for AI API calls</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h4>What's Running</h4>
+            <div class="port-row"><span class="port-badge">:4095</span><span>OpenCode (AI backend)</span></div>
+            <div class="port-row"><span class="port-badge">:3000</span><span>OpenChamber (Web UI)</span></div>
+            <p class="small-note">Both ports are local-only. Nothing is exposed to the internet when using the desktop app.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Password &amp; Auth</h4>
+            <p>Password protection is managed directly inside <strong>OpenChamber's Settings</strong> — AI Stack doesn't control this. You can set, change, or remove a password from within the app itself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VPS INSTALL GUIDE ── -->
+  <section id="install-vps" class="section install-vps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">VPS / Web App</span>
+        <h2 class="section-title">Deploy on a VPS</h2>
+        <p class="section-subtitle">Run the full stack on any cloud server. Access OpenChamber from your laptop or phone browser — anywhere, anytime.</p>
+      </div>
+
+      <div class="guide-layout">
+        <div class="guide-steps">
+          <!-- Step 1 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">1</div>
+              <h3>Get a VPS</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>You need a Linux VPS with at least 1 GB RAM. Any of these providers work perfectly:</p>
+              <div class="providers-grid">
+                <div class="provider-pill">DigitalOcean</div>
+                <div class="provider-pill">Hetzner (cheapest)</div>
+                <div class="provider-pill">Vultr</div>
+                <div class="provider-pill">Linode</div>
+                <div class="provider-pill">AWS EC2</div>
+                <div class="provider-pill">Google Cloud</div>
+              </div>
+              <p>Ubuntu 22.04 or 24.04 recommended. SSH into your server before continuing.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">2</div>
+              <h3>Install Docker &amp; Docker Compose</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>Run this on your VPS to install Docker in one command:</p>
+              <div class="code-box">
+                <pre><code id="code-docker-install">curl -fsSL https://get.docker.com | sh</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-docker-install', this)">Copy</button>
+              </div>
+              <p>Then add your user to the docker group so you don't need <code>sudo</code> every time:</p>
+              <div class="code-box">
+                <pre><code id="code-docker-group">sudo usermod -aG docker $USER
+newgrp docker</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-docker-group', this)">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">3</div>
+              <h3>Download the docker-compose.yml</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>Download the ready-made Docker Compose configuration directly from the GitHub repository:</p>
+              <div class="code-box">
+                <pre><code id="code-compose-dl">curl -fsSL https://raw.githubusercontent.com/Akakaui/opencode-desktop-app/main/docker/docker-compose.yml -o docker-compose.yml</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-compose-dl', this)">Copy</button>
+              </div>
+              <p class="tip">✓ This file sets up both OpenCode and OpenChamber containers plus an auto-updater (Watchtower).</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">4</div>
+              <h3>Start the Stack</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>Launch both services in the background with a single command:</p>
+              <div class="code-box">
+                <pre><code id="code-compose-up">docker compose up -d</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-compose-up', this)">Copy</button>
+              </div>
+              <p>Wait about 30–60 seconds for the containers to pull and start. Then check they're running:</p>
+              <div class="code-box">
+                <pre><code id="code-compose-ps">docker compose ps</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-compose-ps', this)">Copy</button>
+              </div>
+              <p class="tip">✓ Both <code>ai-stack</code> and <code>ai-stack-watchtower</code> should show as <strong>Up</strong>.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">5</div>
+              <h3>Open in Your Browser</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>On any device — your laptop, tablet, or phone — open a browser and go to:</p>
+              <div class="url-display">http://&lt;your-vps-ip&gt;:3000</div>
+              <p>Replace <code>&lt;your-vps-ip&gt;</code> with your actual server IP address (find it on your VPS provider dashboard).</p>
+              <div class="callout callout-info">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                To access from the internet (not just LAN), make sure port <strong>3000</strong> is open in your VPS firewall. On Ubuntu: <code>sudo ufw allow 3000</code>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">6</div>
+              <h3>Add a Domain &amp; HTTPS (Optional)</h3>
+            </div>
+            <div class="guide-step-body">
+              <p>To access your stack at a clean URL like <code>https://ai.yourdomain.com</code>, add Nginx as a reverse proxy with a free SSL certificate from Let's Encrypt:</p>
+              <div class="code-box">
+                <pre><code id="code-nginx">sudo apt install nginx certbot python3-certbot-nginx -y
+
+# Configure Nginx to proxy port 3000
+sudo nano /etc/nginx/sites-available/ai-stack</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-nginx', this)">Copy</button>
+              </div>
+              <p>Add this Nginx config (replace <code>ai.yourdomain.com</code> with your domain):</p>
+              <div class="code-box">
+                <pre><code id="code-nginx-conf">server {
+    server_name ai.yourdomain.com;
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+    }
+}</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-nginx-conf', this)">Copy</button>
+              </div>
+              <div class="code-box">
+                <pre><code id="code-ssl">sudo ln -s /etc/nginx/sites-available/ai-stack /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+sudo certbot --nginx -d ai.yourdomain.com</code></pre>
+                <button class="btn-copy" onclick="copyCode('code-ssl', this)">Copy</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 7 -->
+          <div class="guide-step">
+            <div class="guide-step-header">
+              <div class="guide-num">7</div>
+              <h3>Managing the Stack</h3>
+            </div>
+            <div class="guide-step-body">
+              <div class="cmd-grid">
+                <div class="cmd-item">
+                  <div class="cmd-label">View logs</div>
+                  <div class="code-box compact">
+                    <pre><code id="code-logs">docker compose logs -f</code></pre>
+                    <button class="btn-copy" onclick="copyCode('code-logs', this)">Copy</button>
+                  </div>
+                </div>
+                <div class="cmd-item">
+                  <div class="cmd-label">Stop the stack</div>
+                  <div class="code-box compact">
+                    <pre><code id="code-stop">docker compose down</code></pre>
+                    <button class="btn-copy" onclick="copyCode('code-stop', this)">Copy</button>
+                  </div>
+                </div>
+                <div class="cmd-item">
+                  <div class="cmd-label">Restart</div>
+                  <div class="code-box compact">
+                    <pre><code id="code-restart">docker compose restart</code></pre>
+                    <button class="btn-copy" onclick="copyCode('code-restart', this)">Copy</button>
+                  </div>
+                </div>
+                <div class="cmd-item">
+                  <div class="cmd-label">Update manually</div>
+                  <div class="code-box compact">
+                    <pre><code id="code-update">docker compose pull
+docker compose up -d</code></pre>
+                    <button class="btn-copy" onclick="copyCode('code-update', this)">Copy</button>
+                  </div>
+                </div>
+              </div>
+              <div class="callout callout-success">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                <strong>Auto-updates are built in.</strong> Watchtower checks for new container versions every hour and restarts the stack automatically. You don't need to do anything.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VPS Sidebar -->
+        <div class="guide-sidebar">
+          <div class="sidebar-card">
+            <h4>VPS Requirements</h4>
+            <ul class="req-list">
+              <li><span class="req-label">OS</span> Ubuntu 22.04 / 24.04</li>
+              <li><span class="req-label">RAM</span> 1 GB minimum (2 GB recommended)</li>
+              <li><span class="req-label">CPU</span> 1 vCPU+</li>
+              <li><span class="req-label">Disk</span> 10 GB free</li>
+              <li><span class="req-label">Ports</span> 3000 open (or 80/443 with Nginx)</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h4>What's Exposed</h4>
+            <div class="port-row"><span class="port-badge">:3000</span><span>OpenChamber (public)</span></div>
+            <div class="port-row"><span class="port-badge">:4095</span><span>OpenCode (internal only)</span></div>
+            <p class="small-note">OpenCode runs inside the container network and is never directly exposed to the internet. Only OpenChamber's port 3000 is public.</p>
+          </div>
+          <div class="sidebar-card">
+            <h4>Your data persists</h4>
+            <p>All sessions, history, and settings are stored in a named Docker volume <code>ai-stack-data</code>. Your data survives container restarts and updates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What is the difference between this app and the <code>ai-stack-setup.sh</code> script?</h3>
+          <p>The <code>ai-stack-setup.sh</code> script in the repository installs the <strong>entire multi-service developer workspace</strong> (including Open Design, Agent-Browser, tmux session structures, Nginx reverse-proxies, and SSL certificates) on a Linux VPS or Codespace. On the other hand, the desktop installer and Docker-compose configurations in this project are a <strong>lightweight launcher</strong> designed <em>specifically</em> to bundle and run <strong>OpenCode</strong> and <strong>OpenChamber</strong> together as a single unified tool (without design or browser-automation tools).</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does it work on macOS or Linux?</h3>
+          <p>The current <code>.exe</code> installer is Windows only. On macOS or Linux you can run it from source by cloning the <a href="https://github.com/Akakaui/opencode-desktop-app" class="link" target="_blank">GitHub repo</a>, running <code>cd desktop &amp;&amp; npm install &amp;&amp; npm start</code>. The VPS Docker deployment works on any OS that supports Docker.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Will it break when OpenCode or OpenChamber update?</h3>
+          <p>No. AI Stack is a thin wrapper — it simply starts <code>opencode serve</code> and <code>openchamber serve</code> as background processes. It has no knowledge of their internal code. Any bug fixes, new features, or AI model additions from the OpenCode/OpenChamber teams are picked up automatically when the underlying packages update.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do I set a password to protect my instance?</h3>
+          <p>Password protection is managed natively inside <strong>OpenChamber's Settings</strong>. Open the app, go to Settings → Security, and configure a password there. AI Stack does not touch or control this — it works exactly the same as running OpenChamber standalone.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if port 3000 or 4095 is already in use?</h3>
+          <p>AI Stack checks if each port is already occupied before trying to start. If a port is in use it will skip starting that service (assuming it's already running). To use different ports, you'd need to modify the source and rebuild, or set <code>PORT_OPENCODE</code> / <code>PORT_OPENCHAMBER</code> environment variables in the Docker Compose file.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is my AI session data stored locally?</h3>
+          <p>Yes. On the desktop app, all session data is stored in your user application data folder (<code>%APPDATA%/ai-stack-desktop</code> on Windows). On VPS, data is stored in the <code>ai-stack-data</code> Docker volume on your server. Nothing is sent to any external service except your AI provider API calls.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can multiple people use the VPS deployment?</h3>
+          <p>Yes. Once deployed, anyone who has the URL and (optionally) the password you set in OpenChamber can access and use the interface from their browser. It's a shared instance — sessions are visible to all users with access unless OpenChamber has per-user isolation enabled in its settings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/icon.png" alt="AI Stack" class="footer-logo">
+          <div>
+            <div class="footer-brand-name">AI Stack</div>
+            <div class="footer-brand-sub">OpenCode + OpenChamber, unified.</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Akakaui/opencode-desktop-app" target="_blank" rel="noopener">GitHub Repository</a>
+          <a href="https://opencode.ai" target="_blank" rel="noopener">OpenCode Docs</a>
+          <a href="GOOGLE_DRIVE_LINK_HERE" target="_blank" rel="noopener">Download .EXE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 AI Stack. Open source project. OpenCode and OpenChamber are independent projects maintained by their respective teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

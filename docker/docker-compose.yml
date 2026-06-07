@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  ai-stack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-stack
+    restart: always
+    ports:
+      - "3000:3000"   # OpenChamber UI  — access in browser at http://<your-ip>:3000
+      - "4095:4095"   # OpenCode server — used internally by OpenChamber
+    environment:
+      - STACK_DATA_DIR=/data
+    volumes:
+      - ai-stack-data:/data
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  # ── Watchtower: auto-update when you push a new image ────────────
+  # Watchtower watches for new image versions every hour and
+  # restarts the stack automatically — no SSH required.
+  watchtower:
+    image: containrrr/watchtower
+    container_name: ai-stack-watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 3600 --cleanup --label-enable
+
+volumes:
+  ai-stack-data:
+    driver: local
