@@ -1,0 +1,38 @@
+name: Landing Page CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "landing-page/**"
+      - ".github/workflows/landing.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "landing-page/**"
+      - ".github/workflows/landing.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: landing-page
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install HTML validator
+        run: npm install -g html-validate
+
+      - name: Validate HTML structure
+        run: html-validate index.html
+
+      - name: Check internal resource links
+        run: |
+          chmod +x "${{ github.workspace }}/.github/workflows/check-links.sh"
+          "${{ github.workspace }}/.github/workflows/check-links.sh"
