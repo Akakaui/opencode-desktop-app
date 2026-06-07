@@ -4,66 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AI Stack — One app that launches OpenCode and OpenChamber together. Run as a Windows desktop app or deploy as a web app on any VPS.">
+  <meta name="theme-color" content="#151313">
   <title>AI Stack — OpenCode + OpenChamber in One App</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/icon.png">
 </head>
 <body>
 
-  <div class="grain"></div>
-
-  <!-- ── NAVBAR ── -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="brand">
-        <span class="brand-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </span>
+        <img src="assets/icon.png" alt="AI Stack" class="brand-logo">
         <span class="brand-name">AI Stack</span>
       </a>
-      <nav class="nav-links">
+      <nav class="nav-links" id="navLinks">
         <a href="#how-it-works">How it Works</a>
         <a href="#install-pc">Windows</a>
         <a href="#install-vps">VPS</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#download" class="btn btn-primary nav-cta" id="nav-download-btn">Download</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <a href="#download" class="btn btn-primary nav-cta">Download</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ── HERO ── -->
   <section class="hero">
-    <div class="container hero-container">
+    <div class="container hero-grid">
       <div class="hero-content">
         <div class="badge-row">
           <span class="badge">Open Source</span>
-          <span class="badge badge-cyber">Free Forever</span>
+          <span class="badge badge-accent">Free Forever</span>
         </div>
-        <h1 class="hero-title">
-          OpenCode <span class="amp">&amp;</span> OpenChamber.<br>
-          <span class="highlight">One Launcher.</span>
-        </h1>
-        <p class="hero-lead">
-          Stop juggling two terminals. <strong>AI Stack</strong> boots <span class="accent">OpenCode</span> (your AI coding backend) and <span class="accent">OpenChamber</span> (the web UI) together — as a native Windows desktop app or a self-hosted VPS deployment.
-        </p>
+        <h1 class="hero-title">OpenCode <span class="amp">&amp;</span> OpenChamber.<br><span class="accent">One Launcher.</span></h1>
+        <p class="hero-lead">Stop juggling two terminals. <strong>AI Stack</strong> boots OpenCode (your AI coding backend) and OpenChamber (the web UI) together — as a native Windows desktop app or a self-hosted VPS deployment.</p>
         <div class="hero-tags">
-          <span class="tag">✓ Windows .EXE</span>
-          <span class="tag">✓ Docker VPS</span>
-          <span class="tag">✓ Phone Access</span>
-          <span class="tag">✓ Auto-updates</span>
+          <span class="tag">Windows .EXE</span>
+          <span class="tag">Docker VPS</span>
+          <span class="tag">Phone Access</span>
+          <span class="tag">Auto-updates</span>
         </div>
         <div class="hero-actions" id="download">
-          <a href="https://drive.google.com/uc?id=1k_-D8ai9zpO8RgEcVUKjUXCmdWkH3WP5" class="btn btn-primary btn-lg" id="main-download-btn" target="_blank" rel="noopener">
+          <a href="https://drive.google.com/uc?id=1k_-D8ai9zpO8RgEcVUKjUXCmdWkH3WP5" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
             <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
             Download for Windows
           </a>
-          <a href="#install-vps" class="btn btn-secondary btn-lg">
+          <a href="#install-vps" class="btn btn-ghost btn-lg">
             <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
             Deploy on VPS
           </a>
@@ -73,9 +63,7 @@
       <div class="hero-visual">
         <div class="mockup">
           <div class="mockup-bar">
-            <div class="mockup-dots">
-              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            </div>
+            <div class="mockup-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             <span class="mockup-title">AI Stack — OpenChamber</span>
           </div>
           <div class="mockup-body">
@@ -109,56 +97,46 @@
             </div>
           </div>
           <div class="mockup-status">
-            <span class="status-green"></span> OpenCode :4095
-            <span class="status-divider"></span>
-            <span class="status-green"></span> OpenChamber :3000
+            <span class="status-dot"></span> OpenCode :4095
+            <span class="status-sep"></span>
+            <span class="status-dot"></span> OpenChamber :3000
           </div>
         </div>
-        <div class="hero-glow"></div>
       </div>
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ── -->
   <section id="how-it-works" class="section how-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Architecture</span>
-        <h2 class="section-title">How it <span class="highlight">works</span></h2>
+        <h2 class="section-title">How it <span class="accent">works</span></h2>
         <p class="section-sub">AI Stack is a thin, smart launcher. It starts both services, wires them together, and stays out of your way.</p>
       </div>
-
       <div class="arch-flow">
         <div class="arch-node user-node">
           <div class="arch-icon-wrap">&#128100;</div>
           <span class="arch-label">You</span>
           <span class="arch-sub">Open the app / browser</span>
         </div>
-        <div class="arch-connector">
-          <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M0 12h34M34 2l10 10-10 10" stroke="currentColor" stroke-width="2"/></svg>
-        </div>
+        <div class="arch-arrow-down">&#8594;</div>
         <div class="arch-node app-node">
-          <div class="arch-icon-wrap">
-            <img src="assets/icon.png" alt="AI Stack" width="28" height="28" style="border-radius:6px;">
-          </div>
+          <div class="arch-icon-wrap"><img src="assets/icon.png" alt="AI Stack" width="28" height="28" style="border-radius:6px"></div>
           <span class="arch-label">AI Stack</span>
           <span class="arch-sub">Unified Launcher</span>
         </div>
-        <div class="arch-split-connector">
-          <svg width="24" height="40" viewBox="0 0 24 40" fill="none"><path d="M12 0v26M12 26l-8-8M12 26l8-8" stroke="currentColor" stroke-width="2"/></svg>
-        </div>
+        <div class="arch-arrow-down">&#8595;</div>
         <div class="arch-split">
-          <div class="arch-node inner-node blue-node">
-            <span class="arch-label sm">OpenCode</span>
+          <div class="arch-node inner-node">
+            <span class="arch-label">OpenCode</span>
             <span class="arch-sub">AI backend · :4095</span>
           </div>
-          <div class="arch-node inner-node cyan-node">
-            <span class="arch-label sm">OpenChamber</span>
+          <div class="arch-node inner-node">
+            <span class="arch-label">OpenChamber</span>
             <span class="arch-sub">Web UI · :3000</span>
           </div>
         </div>
       </div>
-
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-num">01</div>
@@ -184,58 +162,39 @@
     </div>
   </section>
 
-  <!-- ── PC INSTALL ── -->
   <section id="install-pc" class="section pc-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Desktop App</span>
-        <h2 class="section-title">Install on <span class="highlight">Windows</span></h2>
+        <h2 class="section-title">Install on <span class="accent">Windows</span></h2>
         <p class="section-sub">A native installer with a desktop shortcut. Download once, use forever.</p>
       </div>
-
       <div class="install-grid">
         <div class="install-steps">
           <div class="install-step">
-            <div class="step-head">
-              <span class="step-badge">1</span>
-              <h3>Install Node.js 20+</h3>
-            </div>
+            <div class="step-head"><span class="step-badge">1</span><h3>Install Node.js 20+</h3></div>
             <div class="step-body">
               <p>AI Stack needs Node.js to run OpenCode and OpenChamber.</p>
               <div class="callout info">
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
                 Download the <strong>LTS version</strong> from <a href="https://nodejs.org" target="_blank" rel="noopener" class="link">nodejs.org</a>. Restart your PC after installing.
               </div>
-              <div class="code-block">
-                <pre><code id="code-node-check">node --version</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-node-check', this)">Copy</button>
-              </div>
-              <p class="hint">You should see <code>v20.x.x</code> or higher.</p>
+              <div class="code-block"><pre><code id="code-node-check">node --version</code></pre><button class="copy-btn" onclick="copyCode('code-node-check', this)">Copy</button></div>
+              <p class="hint">You should see v20.x.x or higher.</p>
             </div>
           </div>
-
           <div class="install-step">
-            <div class="step-head">
-              <span class="step-badge">2</span>
-              <h3>Install OpenCode &amp; OpenChamber globally</h3>
-            </div>
+            <div class="step-head"><span class="step-badge">2</span><h3>Install OpenCode &amp; OpenChamber globally</h3></div>
             <div class="step-body">
               <p>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> and run:</p>
-              <div class="code-block">
-                <pre><code id="code-global-install">npm install -g opencode-ai @openchamber/web</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-global-install', this)">Copy</button>
-              </div>
+              <div class="code-block"><pre><code id="code-global-install">npm install -g opencode-ai @openchamber/web</code></pre><button class="copy-btn" onclick="copyCode('code-global-install', this)">Copy</button></div>
               <p class="hint">If you skip this step, AI Stack will prompt you to install on first launch.</p>
             </div>
           </div>
-
           <div class="install-step">
-            <div class="step-head">
-              <span class="step-badge">3</span>
-              <h3>Download AI Stack Installer</h3>
-            </div>
+            <div class="step-head"><span class="step-badge">3</span><h3>Download AI Stack Installer</h3></div>
             <div class="step-body">
-              <a href="https://drive.google.com/uc?id=1k_-D8ai9zpO8RgEcVUKjUXCmdWkH3WP5" class="btn btn-primary" id="step-download-btn" target="_blank" rel="noopener">
+              <a href="https://drive.google.com/uc?id=1k_-D8ai9zpO8RgEcVUKjUXCmdWkH3WP5" class="btn btn-primary" target="_blank" rel="noopener">
                 <svg class="icon" fill="currentColor" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
                 Download AI Stack Setup.exe
               </a>
@@ -245,12 +204,8 @@
               </div>
             </div>
           </div>
-
           <div class="install-step">
-            <div class="step-head">
-              <span class="step-badge">4</span>
-              <h3>Run the Installer</h3>
-            </div>
+            <div class="step-head"><span class="step-badge">4</span><h3>Run the Installer</h3></div>
             <div class="step-body">
               <p>Double-click <code>AI Stack Setup.exe</code>. In under 30 seconds you'll have:</p>
               <ul class="check-list">
@@ -260,12 +215,8 @@
               </ul>
             </div>
           </div>
-
           <div class="install-step">
-            <div class="step-head">
-              <span class="step-badge">5</span>
-              <h3>Add your API Key</h3>
-            </div>
+            <div class="step-head"><span class="step-badge">5</span><h3>Add your API Key</h3></div>
             <div class="step-body">
               <p>Open AI Stack → Settings → Providers → paste your API key.</p>
               <div class="provider-row">
@@ -279,7 +230,6 @@
             </div>
           </div>
         </div>
-
         <div class="install-sidebar">
           <div class="sidebar-card">
             <h4>Requirements</h4>
@@ -301,15 +251,13 @@
     </div>
   </section>
 
-  <!-- ── VPS INSTALL ── -->
   <section id="install-vps" class="section vps-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">VPS / Web App</span>
-        <h2 class="section-title">Deploy on a <span class="highlight">VPS</span></h2>
+        <h2 class="section-title">Deploy on a <span class="accent">VPS</span></h2>
         <p class="section-sub">Run the full stack on any cloud server. Access from your laptop, tablet, or phone.</p>
       </div>
-
       <div class="install-grid">
         <div class="install-steps">
           <div class="install-step">
@@ -328,36 +276,21 @@
           <div class="install-step">
             <div class="step-head"><span class="step-badge">2</span><h3>Install Docker</h3></div>
             <div class="step-body">
-              <div class="code-block">
-                <pre><code id="code-docker-install">curl -fsSL https://get.docker.com | sh</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-docker-install', this)">Copy</button>
-              </div>
-              <div class="code-block">
-                <pre><code id="code-docker-group">sudo usermod -aG docker $USER && newgrp docker</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-docker-group', this)">Copy</button>
-              </div>
+              <div class="code-block"><pre><code id="code-docker-install">curl -fsSL https://get.docker.com | sh</code></pre><button class="copy-btn" onclick="copyCode('code-docker-install', this)">Copy</button></div>
+              <div class="code-block"><pre><code id="code-docker-group">sudo usermod -aG docker $USER && newgrp docker</code></pre><button class="copy-btn" onclick="copyCode('code-docker-group', this)">Copy</button></div>
             </div>
           </div>
           <div class="install-step">
             <div class="step-head"><span class="step-badge">3</span><h3>Download compose file</h3></div>
             <div class="step-body">
-              <div class="code-block">
-                <pre><code id="code-compose-dl">curl -fsSL https://raw.githubusercontent.com/Akakaui/opencode-desktop-app/main/docker/docker-compose.yml -o docker-compose.yml</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-compose-dl', this)">Copy</button>
-              </div>
+              <div class="code-block"><pre><code id="code-compose-dl">curl -fsSL https://raw.githubusercontent.com/Akakaui/opencode-desktop-app/main/docker/docker-compose.yml -o docker-compose.yml</code></pre><button class="copy-btn" onclick="copyCode('code-compose-dl', this)">Copy</button></div>
             </div>
           </div>
           <div class="install-step">
             <div class="step-head"><span class="step-badge">4</span><h3>Start the stack</h3></div>
             <div class="step-body">
-              <div class="code-block">
-                <pre><code id="code-compose-up">docker compose up -d</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-compose-up', this)">Copy</button>
-              </div>
-              <div class="code-block">
-                <pre><code id="code-compose-ps">docker compose ps</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-compose-ps', this)">Copy</button>
-              </div>
+              <div class="code-block"><pre><code id="code-compose-up">docker compose up -d</code></pre><button class="copy-btn" onclick="copyCode('code-compose-up', this)">Copy</button></div>
+              <div class="code-block"><pre><code id="code-compose-ps">docker compose ps</code></pre><button class="copy-btn" onclick="copyCode('code-compose-ps', this)">Copy</button></div>
             </div>
           </div>
           <div class="install-step">
@@ -366,7 +299,7 @@
               <div class="url-box">http://&lt;your-vps-ip&gt;:3000</div>
               <div class="callout info">
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                Open port 3000 in your firewall: <code>sudo ufw allow 3000</code>
+                Open port 3000: <code>sudo ufw allow 3000</code>
               </div>
             </div>
           </div>
@@ -374,15 +307,10 @@
             <div class="step-head"><span class="step-badge">6</span><h3>Add a domain &amp; HTTPS</h3></div>
             <div class="step-body">
               <p>Use Nginx + Let's Encrypt for a clean <code>https://ai.yourdomain.com</code> URL:</p>
-              <div class="code-block">
-                <pre><code id="code-nginx">sudo apt install nginx certbot python3-certbot-nginx -y</code></pre>
-                <button class="copy-btn" onclick="copyCode('code-nginx', this)">Copy</button>
-              </div>
-              <p class="hint">Then configure the reverse proxy and run <code>certbot</code> — see the full guide in the FAQ.</p>
+              <div class="code-block"><pre><code id="code-nginx">sudo apt install nginx certbot python3-certbot-nginx -y</code></pre><button class="copy-btn" onclick="copyCode('code-nginx', this)">Copy</button></div>
             </div>
           </div>
         </div>
-
         <div class="install-sidebar">
           <div class="sidebar-card">
             <h4>Requirements</h4>
@@ -402,43 +330,41 @@
     </div>
   </section>
 
-  <!-- ── FAQ ── -->
   <section id="faq" class="section faq-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">FAQ</span>
-        <h2 class="section-title">Common <span class="highlight">questions</span></h2>
+        <h2 class="section-title">Common <span class="accent">questions</span></h2>
       </div>
       <div class="faq-grid">
         <div class="faq-card">
           <h3>Desktop vs VPS — what's the difference?</h3>
-          <p>The desktop installer bundles everything into a native Windows app. The VPS deployment runs on a cloud server so you can access it from any device. Both use the same core tools.</p>
+          <p>The desktop installer bundles everything into a native Windows app. The VPS deployment runs on a cloud server so you can access it from any device.</p>
         </div>
         <div class="faq-card">
           <h3>Does it work on macOS or Linux?</h3>
-          <p>The <code>.exe</code> installer is Windows only. On macOS/Linux, clone the repo, run <code>cd desktop && npm install && npm start</code>. The VPS deployment works on any OS via Docker.</p>
+          <p>The .exe installer is Windows only. On macOS/Linux, clone the repo, run <code>cd desktop && npm install && npm start</code>. The VPS deployment works on any OS via Docker.</p>
         </div>
         <div class="faq-card">
           <h3>Will updates break anything?</h3>
-          <p>No. AI Stack is a thin wrapper — it just runs <code>opencode serve</code> and <code>openchamber serve</code>. Updates to those tools are picked up automatically.</p>
+          <p>No. AI Stack is a thin wrapper — it just runs <code>opencode serve</code> and <code>openchamber serve</code>. Updates are picked up automatically.</p>
         </div>
         <div class="faq-card">
           <h3>How do I set a password?</h3>
-          <p>Inside OpenChamber: Settings → Security → set a password. AI Stack doesn't control this — it works exactly like standalone OpenChamber.</p>
+          <p>Inside OpenChamber: Settings → Security → set a password. AI Stack doesn't control this.</p>
         </div>
         <div class="faq-card">
           <h3>What if ports 3000 or 4095 are in use?</h3>
-          <p>AI Stack detects occupied ports and skips starting that service. Use <code>PORT_OPENCODE</code> / <code>PORT_OPENCHAMBER</code> env vars in Docker Compose to change them.</p>
+          <p>AI Stack detects occupied ports and skips starting that service. Use env vars to change them.</p>
         </div>
         <div class="faq-card">
           <h3>Is my data stored locally?</h3>
-          <p>Yes. Desktop app data goes to <code>%APPDATA%/ai-stack-desktop</code>. VPS data goes to a Docker volume on your server. Nothing leaves your control except AI API calls.</p>
+          <p>Yes. Desktop data goes to <code>%APPDATA%/ai-stack-desktop</code>. VPS data goes to a Docker volume on your server.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
@@ -461,7 +387,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 AI Stack. Open source. OpenCode and OpenChamber are independent projects maintained by their respective teams.</p>
+        <p>&copy; 2026 AI Stack. Open source. OpenCode and OpenChamber are independent projects.</p>
       </div>
     </div>
   </footer>

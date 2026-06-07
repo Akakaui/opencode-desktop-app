@@ -7,16 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function setupTyping() {
   const el = document.querySelector('.typing-text');
   if (!el) return;
-
   const lines = [
     "Sure! Here's a complete FastAPI setup...\n\n```python\nfrom fastapi import FastAPI\napp = FastAPI()\n\n@app.get('/')\ndef root():\n    return {'message': 'Hello!'}\n```",
     "Now writing tests for your API endpoints...",
     "Done! Want me to add authentication next?"
   ];
-
   let lineIdx = 0, charIdx = 0;
   el.textContent = '';
-
   function type() {
     const line = lines[lineIdx];
     if (charIdx < line.length) {
@@ -28,7 +25,6 @@ function setupTyping() {
       setTimeout(() => { el.textContent = ''; type(); }, 3000);
     }
   }
-
   setTimeout(type, 800);
 }
 
@@ -37,19 +33,24 @@ function setupScrollNav() {
   if (!navbar) return;
   window.addEventListener('scroll', () => {
     navbar.style.borderBottomColor = window.scrollY > 20
-      ? 'rgba(255,255,255,0.1)'
-      : 'rgba(255,255,255,0.06)';
+      ? 'rgba(206,205,195,0.12)'
+      : 'rgba(206,205,195,0.08)';
   }, { passive: true });
 }
 
 function setupMobileNav() {
   const toggle = document.getElementById('navToggle');
-  const nav = document.querySelector('.nav-links');
+  const nav = document.getElementById('navLinks');
   if (!toggle || !nav) return;
-
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
     toggle.classList.toggle('active');
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+    });
   });
 }
 
@@ -59,9 +60,6 @@ function copyCode(id, btn) {
   navigator.clipboard.writeText(el.textContent.trim()).then(() => {
     btn.textContent = 'Copied!';
     btn.classList.add('copied');
-    setTimeout(() => {
-      btn.textContent = 'Copy';
-      btn.classList.remove('copied');
-    }, 2000);
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
   });
 }
