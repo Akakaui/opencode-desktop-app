@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   setupTyping();
   setupScrollNav();
+  setupMobileNav();
 });
 
-// ── Typing animation in hero mockup ─────────────────────────────
 function setupTyping() {
-  const el = document.querySelector('.typing-effect');
+  const el = document.querySelector('.typing-text');
   if (!el) return;
 
   const lines = [
@@ -32,18 +32,27 @@ function setupTyping() {
   setTimeout(type, 800);
 }
 
-// ── Navbar active state on scroll ───────────────────────────────
 function setupScrollNav() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
   window.addEventListener('scroll', () => {
-    navbar.style.boxShadow = window.scrollY > 20
-      ? '0 4px 30px rgba(0,0,0,0.5)'
-      : 'none';
+    navbar.style.borderBottomColor = window.scrollY > 20
+      ? 'rgba(255,255,255,0.1)'
+      : 'rgba(255,255,255,0.06)';
   }, { passive: true });
 }
 
-// ── Copy code to clipboard ───────────────────────────────────────
+function setupMobileNav() {
+  const toggle = document.getElementById('navToggle');
+  const nav = document.querySelector('.nav-links');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+}
+
 function copyCode(id, btn) {
   const el = document.getElementById(id);
   if (!el) return;
